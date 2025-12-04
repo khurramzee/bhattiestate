@@ -1,0 +1,59 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+site_url: "https://bhattiestate.com"
+logo_url: "/assets/BhattiEstate.png"
+
+collections:
+  - name: "settings"
+    label: "Settings"
+    files:
+      - label: "Site Settings"
+        name: "site_settings"
+        file: "content/settings/site.json"
+        fields:
+          - {label: "Site Title", name: "site_title", widget: "string", default: "Bhatti Estate & Builders"}
+          - {label: "Contact Email", name: "contact_email", widget: "string", default: "info@bhattiestate.com"}
+          - {label: "Phone", name: "phone", widget: "string", default: "03002334448"}
+
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Author", name: "author", widget: "string", default: "Bhatti Estate"}
+      - {label: "Cover Image", name: "cover_image", widget: "image"}
+      - {label: "Excerpt", name: "excerpt", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "listings"
+    label: "Listings"
+    folder: "content/listings"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Status", name: "status", widget: "select", options: ["Available","Sold"]}
+      - {label: "Category", name: "category", widget: "select", options: ["Sale","Rent"]}
+      - {label: "Price", name: "price", widget: "number"}
+      - {label: "Currency", name: "currency", widget: "string", default: "PKR"}
+      - {label: "Location", name: "location", widget: "select", options: ["Malir Cantt","Askari IV","Askari V","Askari VI","Other"]}
+      - {label: "Address", name: "address", widget: "string"}
+      - {label: "Bedrooms", name: "bedrooms", widget: "number"}
+      - {label: "Bathrooms", name: "bathrooms", widget: "number"}
+      - {label: "Size (sq ft)", name: "size", widget: "string"}
+      - {label: "Images", name: "images", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
+      - {label: "Map Embed (iframe)", name: "map_embed", widget: "text"}
+      - {label: "Description", name: "description", widget: "markdown"}
+      - {label: "Features", name: "features", widget: "list", field: {label: "Feature", name: "feature", widget: "string"}}
+      - {label: "Published", name: "published", widget: "boolean", default: true}
+      - {label: "Date", name: "date", widget: "datetime"}
