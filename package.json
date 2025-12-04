@@ -1,17 +1,6 @@
-{
-  "name": "bhattiestate-site",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build && next export",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "tailwindcss": "latest"
-  }
+"devDependencies": {
+  "@tailwindcss/postcss": "^0.1.0",
+  "postcss": "latest",
+  "autoprefixer": "latest",
+  "tailwindcss": "latest"
 }
